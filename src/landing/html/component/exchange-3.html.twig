@@ -1,0 +1,31 @@
+<div id="exchange3" class="exchange exchange3">
+
+    <div class="exchange3__status">
+        Bạn đã đăng nhập: <span class="value">12/21</span>  ngày
+    </div>
+
+    <div class="exchange3__wrapper">
+        {% for item in [1,3,5,9,10,12,14,15,17,19,21] %}
+            <div class="exchange3__item exchange3__item--{{item}} 
+                    {% if item == 1 %}received{% endif %}
+                    {% if item == 3 %}active{% endif %}
+                    {% if item == 5 %}active{% endif %}
+                    {% if item > 5 %}off{% endif %} ">
+                <div class="exchange3__date">
+                    Đăng nhập <br /> {{item}} ngày
+                </div>
+                <div class="exchange3__thumbnail">
+                    <img src="assets/images/task-signin/{{item}}.png" alt="">
+                </div>
+                <a href="#" class="exchange3__action exchange_action">cta_receive</a>
+            </div>
+        {% endfor %}
+    </div>
+    
+    <div class="tooltip">
+        <span class="tooltip__toggle">question_mark</span>
+        <div class="tooltip__content">
+            <p>Đăng nhập liên tục, đủ ngày nhận vật phẩm tương ứng.. </p>
+        </div>
+    </div>
+</div>

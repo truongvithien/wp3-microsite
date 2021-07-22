@@ -1,0 +1,1015 @@
+.exchange1 {
+    &__wrapper {
+        position: absolute;
+        // background: rgba(#000, .5);
+        display: flex;
+        justify-content: center;
+        padding-right: 20px;
+        flex-wrap: wrap;
+
+        max-height: 100%;
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        top: 440px;
+        left: calc(50% - 880px / 2 + 120px);
+        width: 885px;
+        height: 440px;
+
+        @include grid-media($xs, $portrait) {
+            top: 470px;
+            left: calc(50% - 760px / 2 + 0px);
+            width: 760px;
+            height: 760px;
+            justify-content: center;
+            align-content: space-between;
+            overflow: hidden;
+        }
+
+        $bgColor: #2d4aa3;
+        $thumbColor: #2d4aa3;
+        &::-webkit-scrollbar {width: 6px; transition: width .2s;}
+        &:hover {&::-webkit-scrollbar { width: 6px;}}
+        &::-webkit-scrollbar-track {background: rgba($bgColor, .3);}
+        &::-webkit-scrollbar-thumb {background: rgba($thumbColor, 1);}
+        &::-webkit-scrollbar-thumb:hover {background: rgba($thumbColor, 1); }
+    }
+
+    &__item {
+        position: relative;
+        margin: 8px 8px;
+        width: 120px;
+        height: 163px; 
+        transform-origin: top center;
+        @include sprite($wrap-single);
+
+        @include grid-media($xs, $portrait) {
+            transform: scale(1.1);
+            margin: 0 20px;
+        }
+
+        &:nth-child(1) {
+            margin-left: 10px;
+
+            @include grid-media($xs, $portrait) {
+                margin: 0 20px;
+            }
+    
+        }
+        &:nth-child(3) {
+            margin-right: 10px;
+
+            @include grid-media($xs, $portrait) {
+                margin: 0 20px;
+            }
+        }
+
+
+    }
+
+    &__thumbnail {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        position: absolute;
+        top: 26%;
+        left: calc(50%);
+        transform: translateX(-50%);
+        width: 80px;
+        height: 80px;
+
+        // @include sprite($gift-container);
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    &__date {
+        position: absolute;
+        top: 5px;
+        left: calc(50%);
+        transform: translateX(-50%);
+        font-family: UTMCopperplate;
+        font-size: 18px;    
+        width: 100%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        color: #add0ff;
+    }
+
+    &__action {
+        position: absolute;
+        bottom: 15px;
+        left: calc(50%);
+        transform: translateX(-50%);
+        font-family: UTMGodWord;
+        width: 100%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        color: #ffeec6;
+        @include sprite($cta-receive);
+        font-size: 0px;
+
+        &:before {
+            content: "Nhận Quà";
+            font-size: 18px;
+        }
+    }
+
+    //state
+    &__item {
+        &.gotit, 
+        &.received {
+            .exchange_action {
+                @include sprite($cta-receive-off);
+                color: #eee;
+                &:before {
+                    content: "Đã Nhận";
+                }
+            }
+            pointer-events: none;
+        }
+    
+        &.off {
+            .exchange_action {
+                @include sprite($cta-receive-off);
+                color: #eee;
+                &:before {
+                    content: "Chưa Đạt";
+                }
+            }
+            filter: initial;
+        }
+    
+        &.active {
+            animation: blink .3s infinite alternate;
+            @keyframes blink {
+                100% { filter: brightness(130%); }
+            }
+        }
+    }
+
+    .tooltip {
+        right: calc(50% - 570px);
+        top: 440px;
+
+        @include grid-media($xs, $portrait) {
+            right: calc(50% - 362px);
+            top: 356px;
+        }
+    }
+
+}
+
+.exchange1b {
+    &__wrapper {
+        position: absolute;
+        // background: rgba(#000, .5);
+        display: flex;
+        justify-content: center;
+        padding-right: 20px;
+        flex-wrap: wrap;
+
+        max-height: 100%;
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        top: 440px;
+        left: calc(50% - 380px / 2 - 400px);
+        width: 285px;
+        height: 440px;
+
+        @include grid-media($xs, $portrait) {    
+            top: 1300px;
+            left: calc(50% - 690px / 2 + 0px);
+            width: 690px;
+            height: 240px;
+            justify-content: center;
+            align-content: space-between;
+            overflow: hidden;
+        }
+
+        $bgColor: #2d4aa3;
+        $thumbColor: #2d4aa3;
+        &::-webkit-scrollbar {width: 6px; transition: width .2s;}
+        &:hover {&::-webkit-scrollbar { width: 6px;}}
+        &::-webkit-scrollbar-track {background: rgba($bgColor, .3);}
+        &::-webkit-scrollbar-thumb {background: rgba($thumbColor, 1);}
+        &::-webkit-scrollbar-thumb:hover {background: rgba($thumbColor, 1); }
+    }
+
+    &__item {
+        position: relative;
+        margin: 8px 8px;
+        width: 120px;
+        height: 163px; 
+        transform-origin: top center;
+        @include sprite($wrap-combo);
+
+        @include grid-media($xs, $portrait) {
+            transform: scale(1.1);
+            margin: 0 30px;
+        }
+
+
+    }
+
+    &__thumbnail {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        position: absolute;
+        top: 26%;
+        left: calc(50%);
+        transform: translateX(-50%);
+        width: 80px;
+        height: 80px;
+
+        // @include sprite($gift-container);
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    &__date {
+        position: absolute;
+        top: 5px;
+        left: calc(50%);
+        transform: translateX(-50%);
+        font-family: UTMCopperplate;
+        font-size: 18px;    
+        width: 100%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        color: #add0ff;
+    }
+
+    &__action {
+        position: absolute;
+        bottom: 15px;
+        left: calc(50%);
+        transform: translateX(-50%);
+        font-family: UTMGodWord;
+        width: 100%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        color: #ffeec6;
+        @include sprite($cta-receive);
+        font-size: 0px;
+
+        &:before {
+            content: "Nhận Quà";
+            font-size: 18px;
+        }
+    }
+    
+    //state
+    &__item {
+        &.gotit, 
+        &.received {
+            .exchange_action {
+                @include sprite($cta-receive-off);
+                color: #eee;
+                &:before {
+                    content: "Đã Nhận";
+                }
+            }
+            pointer-events: none;
+        }
+    
+        &.off {
+            .exchange_action {
+                @include sprite($cta-receive-off);
+                color: #eee;
+                &:before {
+                    content: "Chưa Đạt";
+                }
+            }
+            filter: initial;
+        }
+    
+        &.active {
+            animation: blink .3s infinite alternate;
+            @keyframes blink {
+                100% { filter: brightness(130%); }
+            }
+        }
+    }
+
+}
+
+.tooltip {
+    position: absolute;
+    z-index: 100;
+
+    @include grid-media($xs, $portrait) {
+        transform: scale(1.2);
+    }
+
+    &__toggle {
+        display: block;
+        @include sprite($tooltip);
+        position: absolute;
+        right: 0px;
+        top: 0px;
+        font-size: 0px;
+
+        &:hover {
+            filter: brightness(110%);
+        }
+    }
+
+    &__content {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 60px;
+        opacity: 0;
+
+        background: rgba(#2d4aa3, .9);
+        padding: 20px 40px;
+        max-width: 600px;
+        width: max-content;
+
+        text-align: center;
+
+        color: #f0dfc1;
+        line-height: 1.4;
+        pointer-events: none;
+
+        @include grid-media($xs, $portrait) {
+            max-width: 500px;
+            font-size: 24px;
+        }
+
+        &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            width: calc(100% + 4px * 2);
+            height: calc(100% + 4px * 2);
+            left: calc(-4px);
+            top: -4px;
+            border: 2px solid #2d4aa3;
+        }
+
+    }
+
+    &__toggle:hover + &__content, 
+    &__content:hover {
+        opacity: 1;
+        pointer-events: all;
+    }
+}
+
+.exchange2 {
+    &__wrapper {
+        position: absolute;
+        // background: rgba(#000, .5);
+        display: flex;
+        justify-content: center;
+        padding-right: 20px;
+        flex-wrap: wrap;
+
+        max-height: 100%;
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        top: 440px;
+        left: calc(50% - 880px / 2);
+        width: 885px;
+        height: 440px;
+
+        @include grid-media($xs, $portrait) {
+            top: 470px;
+            left: calc(50% - 760px / 2 + 0px);
+            width: 760px;
+            height: 760px;
+            justify-content: center;
+            align-content: center;
+            overflow: hidden;
+        }
+
+        $bgColor: #2d4aa3;
+        $thumbColor: #2d4aa3;
+        &::-webkit-scrollbar {width: 6px; transition: width .2s;}
+        &:hover {&::-webkit-scrollbar { width: 6px;}}
+        &::-webkit-scrollbar-track {background: rgba($bgColor, .3);}
+        &::-webkit-scrollbar-thumb {background: rgba($thumbColor, 1);}
+        &::-webkit-scrollbar-thumb:hover {background: rgba($thumbColor, 1); }
+    }
+
+    &__item {
+        position: relative;
+        margin: 8px 8px;
+        width: 120px;
+        height: 163px; 
+        transform-origin: top center;
+        @include sprite($wrap-single2);
+
+
+        @include grid-media($xs, $portrait) {
+            margin: 20px 20px;
+            transform: scale(1.1);
+
+            // Order
+            // $start: 1;
+            // $end: 3;
+            // @for $i from $start through $end {
+            //     &:nth-child(#{$i}) {
+            //         order: #{$i};
+            //     }
+            // }
+            // Reverse sublist order
+            // $start: 4;
+            // $end: 6;
+            // @for $i from $start through $end {
+            //     &:nth-child(#{$i}) {
+            //         order: #{$end + $start - $i};
+            //     }
+            // }
+
+        }
+
+    }
+
+    &__thumbnail {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        position: absolute;
+        top: 26%;
+        left: calc(50%);
+        transform: translateX(-50%);
+        width: 80px;
+        height: 80px;
+
+        // @include sprite($gift-container);
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    &__date {
+        position: absolute;
+        top: 5px;
+        left: calc(50%);
+        transform: translateX(-50%);
+        font-family: UTMCopperplate;
+        font-size: 18px;    
+        width: 100%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        color: #add0ff;
+    }
+
+    &__action {
+        position: absolute;
+        bottom: 15px;
+        left: calc(50%);
+        transform: translateX(-50%);
+        font-family: UTMGodWord;
+        width: 100%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        color: #ffeec6;
+        @include sprite($cta-receive);
+        font-size: 0px;
+
+        &:before {
+            content: "Nhận Quà";
+            font-size: 18px;
+        }
+    }
+    
+    //state
+    &__item {
+        &.gotit, 
+        &.received {
+            .exchange_action {
+                @include sprite($cta-receive-off);
+                color: #eee;
+                &:before {
+                    content: "Đã Nhận";
+                }
+            }
+            pointer-events: none;
+        }
+    
+        &.off {
+            .exchange_action {
+                @include sprite($cta-receive-off);
+                color: #eee;
+                &:before {
+                    content: "Chưa Đạt";
+                }
+            }
+            filter: initial;
+        }
+    
+        &.active {
+            animation: blink .3s infinite alternate;
+            @keyframes blink {
+                100% { filter: brightness(130%); }
+            }
+        }
+    }
+
+    .tooltip {
+        right: calc(50% - 570px);
+        top: 420px;
+        @include grid-media($xs, $portrait) {
+            right: calc(50% - 362px);
+            top: 1280px;
+        }
+
+    }
+
+}
+
+.exchange3 {
+    &__wrapper {
+        position: absolute;
+        // background: rgba(#000, .5);
+        display: flex;
+        justify-content: center;
+        padding-right: 20px;
+        flex-wrap: wrap;
+
+        max-height: 100%;
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        top: 350px;
+        left: calc(50% - 1128px / 2 + 18px);
+        width: 1128px;
+        height: 740px;
+
+        @include grid-media($xs, $portrait) {
+            top: 430px;
+            left: calc(50% - 760px / 2 + 0px);
+            width: 760px;
+            height: 1265px;
+            justify-content: center;
+            align-content: flex-start;
+            overflow: hidden;
+        
+        }
+
+        $bgColor: #2d4aa3;
+        $thumbColor: #2d4aa3;
+        &::-webkit-scrollbar {width: 6px; transition: width .2s;}
+        &:hover {&::-webkit-scrollbar { width: 6px;}}
+        &::-webkit-scrollbar-track {background: rgba($bgColor, .3);}
+        &::-webkit-scrollbar-thumb {background: rgba($thumbColor, 1);}
+        &::-webkit-scrollbar-thumb:hover {background: rgba($thumbColor, 1); }
+    }
+
+    &__item {
+        position: relative;
+        margin: 8px 8px;
+        width: 120px;
+        height: 163px; 
+        transform-origin: top center;
+        @include sprite($wrap-login);
+
+        // Order
+        $start: 1;
+        $end: 5;
+        @for $i from $start through $end {
+            &:nth-child(#{$i}) {
+                order: #{$i};
+            }
+        }
+        // Reverse sublist order
+        $start: 6;
+        $end: 10;
+        @for $i from $start through $end {
+            &:nth-child(#{$i}) {
+                order: #{$end + $start - $i};
+            }
+        }
+
+        &:last-child {
+            order: 11;
+            margin-right: auto;
+        }
+
+        @include grid-media($xs, $portrait) {
+            margin: 20px 20px 80px;
+            transform: scale(1.1);
+
+            // Order
+            $start: 1;
+            $end: 3;
+            @for $i from $start through $end {
+                &:nth-child(#{$i}) {
+                    order: #{$i};
+                }
+            }
+            // Reverse sublist order
+            $start: 4;
+            $end: 6;
+            @for $i from $start through $end {
+                &:nth-child(#{$i}) {
+                    order: #{$end + $start - $i};
+                }
+            }
+            // Order
+            $start: 7;
+            $end: 9;
+            @for $i from $start through $end {
+                &:nth-child(#{$i}) {
+                    order: #{$i};
+                }
+            }
+            // Reverse sublist order
+            $start: 10;
+            $end: 11;
+            @for $i from $start through $end {
+                &:nth-child(#{$i}) {
+                    order: #{$end + $start - $i};
+                }
+            }
+
+            &:last-child {
+                margin-right: 20px;
+                margin-left: auto;
+            }
+
+        }
+    }
+
+    &__thumbnail {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        position: absolute;
+        top: 34%;
+        left: calc(50%);
+        transform: translateX(-50%);
+        width: 80px;
+        height: 80px;
+
+        // @include sprite($gift-container);
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    &__date {
+        position: absolute;
+        top: 5px;
+        left: calc(50%);
+        transform: translateX(-50%);
+        font-family: UTMCopperplate;
+        font-size: 18px;    
+        width: 100%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        color: #add0ff;
+    }
+
+    &__action {
+        position: absolute;
+        bottom: 15px;
+        left: calc(50%);
+        transform: translateX(-50%);
+        font-family: UTMGodWord;
+        width: 100%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        color: #ffeec6;
+        @include sprite($cta-receive);
+        font-size: 0px;
+
+        &:before {
+            content: "Nhận Quà";
+            font-size: 18px;
+        }
+    }
+    
+    //state
+    &__item {
+        &.gotit, 
+        &.received {
+            .exchange_action {
+                @include sprite($cta-receive-off);
+                color: #eee;
+                &:before {
+                    content: "Đã Nhận";
+                }
+            }
+            pointer-events: none;
+        }
+    
+        &.off {
+            .exchange_action {
+                @include sprite($cta-receive-off);
+                color: #eee;
+                &:before {
+                    content: "Chưa Đạt";
+                }
+            }
+            filter: initial;
+        }
+    
+        &.active {
+            animation: blink .3s infinite alternate;
+            @keyframes blink {
+                100% { filter: brightness(130%); }
+            }
+        }
+    }
+
+    .tooltip {
+        right: calc(50% - 580px);
+        top: 1020px;
+        @include grid-media($xs, $portrait) {
+            right: calc(50% - 362px);
+            top: 1780px;
+        }
+    }
+
+    &__status {
+        @include sprite($stats-signin);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        text-align: center;
+        color: #abcfff;
+        font-family: RobotoCondensed;
+
+        position: absolute;
+        top: 240px;
+        right: calc(50% - 580px);
+
+        font-size: 18px;
+
+        @include grid-media($xs, $portrait) {
+            top: 320px;
+            right: calc(50% - 37px);
+            transform: scale(1.2);
+        }
+
+        .value {
+            font-weight: bold;
+            font-size: 1.4em;
+            margin: 0 5px;
+            color: #fff0bd;
+        }
+    }
+
+}
+
+.exchange4 {
+    &__wrapper {
+        position: absolute;
+        // background: rgba(#000, .5);
+        display: flex;
+        justify-content: space-around;
+        padding-right: 20px;
+        flex-wrap: wrap;
+
+        max-height: 100%;
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        flex-flow:column wrap;
+
+        top: 250px;
+        left: calc(50% - 1240px / 2 + 0px);
+        width: 1240px;
+        height: 700px;
+
+        @include grid-media($xs, $portrait) {
+            top: 340px;
+            left: calc(50% - 760px / 2 + 0px);
+            width: 760px;
+            height: 1250px;
+            justify-content: center;
+            align-content: center;
+            overflow: hidden;
+        }
+
+        $bgColor: #2d4aa3;
+        $thumbColor: #2d4aa3;
+        &::-webkit-scrollbar {width: 6px; transition: width .2s;}
+        &:hover {&::-webkit-scrollbar { width: 6px;}}
+        &::-webkit-scrollbar-track {background: rgba($bgColor, .3);}
+        &::-webkit-scrollbar-thumb {background: rgba($thumbColor, 1);}
+        &::-webkit-scrollbar-thumb:hover {background: rgba($thumbColor, 1); }
+    }
+
+    &__item {
+        position: relative;
+        margin: 8px 8px;
+        width: 120px;
+        height: 163px; 
+        transform-origin: top center;
+        @include sprite($wrap-multi);
+
+
+        &:nth-child(5) {
+            margin-bottom: 125px;
+            @include grid-media($xs, $portrait) {
+                margin-bottom: 0px;            
+                margin: 10px 20px 12px;
+            }
+        }
+
+        @include grid-media($xs, $portrait) {
+            margin: 10px 20px 12px;
+            transform: scale(1.2);
+
+        }
+
+    }
+
+    &__thumbnail {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        position: absolute;
+        top: calc(50% - 60px / 2);
+        left: calc(50%);
+        transform: translateX(-50%);
+        width: 270px;
+        height: 60px;
+
+        // @include sprite($gift-container);
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    &__date {
+        position: absolute;
+        top: 0px;
+        left: 0%;
+        font-family: UTMCopperplate;
+        font-size: 18px;    
+        width: 25%;
+        height: 100%;
+        text-align: center;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        color: #edf5ff;
+        text-transform: uppercase;
+        font-weight: bold;
+        strong {
+            margin-top: 6px;
+        }
+    }
+
+    &__action {
+        position: absolute;
+        bottom: 15px;
+        right: 3%;
+        font-family: UTMGodWord;
+        width: 100%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        color: #ffeec6;
+        @include sprite($cta-receivemin);
+        font-size: 0px;
+
+        &:before {
+            content: "Nhận Quà";
+            font-size: 18px;
+        }
+    }
+    
+    //state
+    &__item {
+        &.gotit, 
+        &.received {
+            .exchange_action {
+                @include sprite($cta-receivemin-off);
+                color: #eee;
+                &:before {
+                    content: "Đã Nhận";
+                }
+            }
+            pointer-events: none;
+        }
+    
+        &.off {
+            .exchange_action {
+                @include sprite($cta-receivemin-off);
+                color: #eee;
+                &:before {
+                    content: "Chưa Đạt";
+                }
+            }
+            filter: initial;
+        }
+    
+        &.active {
+            animation: blink .3s infinite alternate;
+            @keyframes blink {
+                100% { filter: brightness(130%); }
+            }
+        }
+    }
+
+    .tooltip {
+        right: calc(50% - 580px);
+        top: 1020px;
+        @include grid-media($xs, $portrait) {
+            right: calc(50% - 362px);
+            top: 280px;
+        }
+        &__content {    
+            top: initial;
+            bottom: -46px;
+        }
+    }
+
+    &__status {
+        @include sprite($stats-signin);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        text-align: center;
+        color: #abcfff;
+        font-family: RobotoCondensed;
+
+        position: absolute;
+        top: 200px;
+        right: calc(50% - 300px / 2);
+
+        font-size: 18px;
+
+        @include grid-media($xs, $portrait) {    
+            top: 250px;
+            right: calc(50% - 267px);
+            transform: scale(1.2);
+        }
+
+        .value {
+            font-weight: bold;
+            font-size: 1.4em;
+            margin: 0 5px;
+            color: #fff0bd;
+        }
+    }
+
+}
+
+
+
+
+

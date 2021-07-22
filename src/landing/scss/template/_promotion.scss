@@ -1,0 +1,154 @@
+html {
+    &.popup-opening {
+        overflow: 'hidden'
+    }
+}
+
+body {
+    // background: #0d111a;
+    // overflow: hidden;
+
+    &.body-article {
+        background: transparent;
+        // padding: 10px;
+    }
+}
+
+* {
+    image-rendering: -webkit-optimize-contrast;
+}
+
+.section {
+    width: 2000px;
+    // height: 1000px;
+    @include grid-media($portrait, $xs) {
+        width: 768px;
+        // height: 1100px;
+    }
+    &--frame1 {
+        height: 1000px;
+        @include grid-media($xs, $portrait) {
+            height: 999px;
+        }
+        .section__background {
+        }
+
+    } 
+    &--frame2 {
+        margin-top: -1px;
+        height: 969px;
+        @include grid-media($xs, $portrait) {
+            height: 1611px;
+        }
+    } 
+    &--frame3 {
+        margin-top: -1px;
+        height: 1091px;
+        @include grid-media($xs, $portrait) {
+            height: 1364px;
+        }
+    } 
+    &--frame4 {
+        margin-top: -1px;
+        height: 1129px;
+        @include grid-media($xs, $portrait) {
+            height: 1917px;
+        }
+    } 
+    &--frame5 {
+        margin-top: -1px;
+        height: 1025px;
+        @include grid-media($xs, $portrait) {
+            height: 1598px;
+        }
+    } 
+    
+    &--footer { 
+        height: 440px;
+        margin: -1px;
+        @include grid-media($portrait, $xs) {
+            height: 600px;
+        }
+    }
+}
+
+
+.join {
+    display: block;
+    font-size: 0px;
+    position: absolute;
+    @include sprite($cta-join);
+    z-index: 100;
+    &:hover {
+        @include sprite($cta-join-hov);
+    }
+}
+
+.frame1 {
+    &__inner {
+
+        .logo {
+            display: block;
+            @include sprite($logo);
+            position: absolute;
+            font-size: 0px;
+            top: 100px;
+        }
+
+        .join {
+            top: 710px;
+            left: calc(50% - 322px / 2 + 50px);
+            @include grid-media($xs, $portrait) {
+                top: 825px;
+                left: calc(50% - 322px / 2);
+            }
+        }
+
+    }
+}
+
+.frame2 {
+    &__inner {
+        .join {    
+            top: 250px;
+            left: calc(50% - 322px / 2 - 220px);
+            @include grid-media($xs, $portrait) {    
+                top: 275px;
+                left: calc(50% - 322px / 2 - 92px);
+            }
+        }
+    }
+}
+
+.frame3 {
+    &__inner {
+        .join {
+            top: 240px;
+            left: calc(50% - 322px / 2 + 0px);
+            @include grid-media($xs, $portrait) {
+                top: 225px;
+                left: calc(50% - 322px / 2);
+            }
+        }
+    }
+}
+
+.frame4 {
+    &__inner {
+        .join {    
+            top: 190px;
+            left: calc(50% - 322px / 2 + 0px);
+            @include grid-media($xs, $portrait) {
+                top: 185px;
+                left: calc(50% - 322px / 2 - 111px);
+            
+            }
+        }
+    }
+}
+
+.frame5 {
+    &__inner {
+        
+    }
+}

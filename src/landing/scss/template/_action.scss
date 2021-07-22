@@ -1,0 +1,29 @@
+.action {
+    left: calc(50% - 4px);
+    width: 600px;
+    height: 250px;
+
+    padding: 0 80px;
+
+    position: absolute;
+    top: 420px;
+    display: flex;
+    justify-content: space-around;
+    &__open {
+        display: block;
+        &--1 {
+            @include sprite($btn-open_1);
+
+            &:hover {
+                @include sprite($btn-open_1-hov);
+            }
+        }
+        &--10 {
+            @include sprite($btn-open_10);
+
+            &:hover {
+                @include sprite($btn-open_10-hov);
+            }
+        }
+    }
+}

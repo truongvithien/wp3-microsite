@@ -1,0 +1,60 @@
+// GRIDS 
+
+$xs: (media: "(max-width: 700px)"); //mobile portrait
+$sm: (media: "(min-width: 701px) and (max-width: 840px)"); //tablet portrait + mobile landscape
+$md: (media: "(min-width: 841px) and (max-width: 1260px)"); //tablet landscape + medium desktop
+$lg: (media: "(min-width: 1261px) and (max-width: 1600px)"); //large desktop
+$xl: (media: "(min-width: 1601px)"); //very large desktop
+$portrait: (media: "(orientation:portrait)");
+$landscape: (media: "(orientation:landscape)");
+
+// FONTS
+
+@font-face {
+    font-family: RobotoCondensed;
+    font-display: swap;
+    src: local('RobotoCondensed');
+    src:    url('../assets/fonts/RobotoCondensed/RobotoCondensed-Regular.ttf');
+    font-weight: normal;  
+} 
+
+@font-face {
+    font-family: Arsenal;
+    font-display: swap;
+    src: local('Arsenal');
+    src:    url('../assets/fonts/Arsenal/Arsenal-Bold.ttf');
+    font-weight: 500;  
+} 
+
+// COLORS
+
+$text-primary: #4579c9;
+$text-primary-reverse: #FFFFFF;
+$text-normal: #212226;
+$text-sub: #B3B3B3;
+
+$background-main: #EC5500;
+$background-normal: #050D34;
+$background-light: #F4F4F4;
+
+// ROWS
+
+$neat-grid: (
+  columns: 12,
+  gutter: 10px,
+);
+
+.row {
+	@include dndGrid($neat-grid);
+}
+
+// ANOTHER GRID
+
+$neat-grid-50: (
+	columns: 12,
+	gutter: 50px
+);
+
+.row-50 {
+	@include dndGrid($neat-grid-50);
+}

@@ -1,0 +1,261 @@
+.navigation {
+    position: fixed;
+    top: 0px;
+    left: 0;
+
+    width: 2000px;
+    height: 70px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    background: rgba(#202028, .9);
+
+    @include grid-media($xs, $portrait) {
+        width: 768px; 
+        height: 70px;
+        top: auto;
+        bottom: 0px;
+        left: 0px;
+    }
+
+    li {
+        display: flex;
+        height: 100%;
+        &:not(:last-child):after {
+            content: ""; display: block;
+            @include sprite($top-split);
+            
+        }
+    }
+    
+    &__item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        position: relative;
+        font-size: 18px;
+        line-height: 1.2;
+        color: #a4a4b7;
+        text-transform: uppercase;
+        font-family: UTMCopperplate;
+        padding: 0 76px;
+        height: 100%;
+        font-weight: bold;
+
+        &:not(.auth):hover {
+            color: #ffffff; 
+            &:after {
+                content: ""; display: block;
+                width: 60%; height: 4px;
+                position: absolute;
+                bottom: 0; left: 50%; transform: translateX(-50%);
+                background: #aa1f2f;
+            }
+        }
+
+    }
+
+    @include grid-media($xs, $portrait) {
+
+        // height: 140px;
+
+        &__item {
+            padding: 0 10px;
+            font-size: 22px;
+        }
+    }
+}
+
+.topnav {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 768px;
+    height: 90px;
+    padding: 0 20px;
+    background: #161f20;
+
+    display: none;
+    justify-content: flex-end;
+    align-content: center;
+    align-items: center;
+
+    @include grid-media($xs, $portrait) {
+        display: flex;
+    }
+
+
+    li:first-child {
+        margin-right: auto;
+        
+    }
+
+    > li {
+        display: flex;
+    }
+
+    .gameinfo {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+        color: #f5e5a9;
+        font-size: 20px;
+        line-height: 1.2;
+        font-family: UTMCopperplate;
+        width: 200px;
+    }
+
+    &__item {
+        display: block;
+        font-size: 0px;
+        margin: 0 10px;
+        
+        $navCodes: 'appicon', 'download', 'topup', 'homepage', 'fanpage', 'burger';
+        $navItems: $mb-iconapp, $mb-download, $mb-topup, $mb-home, $mb-fanpage, $mb-burger;
+ 
+        $i: 1;
+        @each $code in $navCodes {
+            &--#{$code} {
+                @include sprite(nth($navItems, $i));
+                $i: $i + 1;
+            }
+        }
+
+        & + ul {
+            display: block;
+            max-height: 0px;
+            overflow: hidden;
+            position: absolute;
+            top: 90px;
+            right: 0;
+            width: 768px;
+            background: #000;
+            transition: max-height .3s;
+
+            li {
+                border-bottom: 1px solid #CCC;
+                a { 
+                    display: block; 
+                    padding: 24px;
+                    font-size: 24px;
+                    color: #FFF;
+                    text-alight: right;
+                }
+            }
+        }
+
+        &[type="checkbox"]:checked + ul {
+            max-height: 9999px;
+        }
+
+    }
+
+}
+
+.rightnav {
+    position: fixed;
+    top: 10%;
+    right: 10px;
+    > ul { 
+        @include sprite($rightbar-bg);
+        padding: 220px 34px 80px 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        align-content: space-between;
+        transform: scale(.8) translateX(100%);
+        transform-origin: top right;
+        transition: transform .4s;
+
+
+        > li {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        li {
+            a:not(.rightnav__top), span {
+                display: block;
+                font-size: 0px;
+            }
+            a, span {
+                cursor: pointer;
+                &:hover {
+                    filter: brightness(110%);
+                }
+            }
+
+            ul {
+                display: flex;
+                width: 100%; 
+                justify-content: space-around;
+            }
+        } 
+    }
+
+    &__toggle {
+        @include sprite($r-toggle);
+        position: absolute;
+        top: 45%;
+        left: -16px;
+        transform: rotate(180deg);
+        transition: transform .4s;
+    }
+
+    ul {
+        &.active {
+            transform: scale(.8) translateX(0);
+            .rightnav__toggle {
+                transform: rotate(0deg);
+            }
+        }
+    }
+
+    &__qrcode {
+        @include sprite($r-qrcode);
+    }
+    &__topup {
+        @include sprite($r-topup);
+    }
+    &__code {
+        @include sprite($r-code);
+    }
+    &__downandroid {
+        @include sprite($r-downandroid);
+    }
+    &__downappstore {
+        @include sprite($r-downappstore);
+    }
+    &__downapk {
+        @include sprite($r-downapk);
+    }
+    &__downpc {
+        @include sprite($r-downpc);
+    }
+    &__group {
+        @include sprite($r-group);
+    }
+    &__fanpage {
+        @include sprite($r-fanpage);
+    }
+    &__youtube {
+        @include sprite($r-youtube);
+    }
+    &__top {
+        display: block;
+        width: 100%;
+        // @include sprite($r-top);
+        font-family: UTMGodWord;
+        font-weight: bold;
+        font-size: 18px;
+        color: #3c0e00;
+        text-align: center;
+
+    }
+}

@@ -1,0 +1,93 @@
+@mixin dndGrid($neat-config) {
+	@include grid-container;
+	@include grid-collapse($neat-config); 
+	width: initial;
+
+	.col-xs, .col-sm, .col-md, .col-lg, .col-xl {
+		&-0 {
+			// display: none;
+		}
+	}
+
+	@include grid-media($xs) {
+		@for $i from 1 through 12 {
+			& > .col-xs-#{$i} {
+				@include grid-column($i, $neat-config);
+			}
+		}
+	}
+
+	@include grid-media($sm) {
+		@for $i from 1 through 12 { 
+			& > .col-sm-#{$i} {
+				@include grid-column($i, $neat-config);
+			}
+		}
+	}
+
+	@include grid-media($md) {
+		@for $i from 1 through 12 {
+			& > .col-md-#{$i} {
+				@include grid-column($i, $neat-config);
+			}
+		}
+	}
+
+	@include grid-media($lg) {
+		@for $i from 1 through 12 {
+			& > .col-lg-#{$i} {
+				@include grid-column($i, $neat-config);
+			}
+		}
+	}
+
+	@include grid-media($xl) {
+		@for $i from 1 through 12 {
+			& > .col-xl-#{$i} {
+				@include grid-column($i, $neat-config);
+			}
+		}
+	}
+
+	//------
+
+	@include grid-media($xs) {
+		@for $i from 1 through 12 {
+			& > .col-xs-push-#{$i} {
+				@include grid-push($i, $neat-config);
+			}
+		}
+	}
+
+	@include grid-media($sm) {
+		@for $i from 1 through 12 { 
+			& > .col-sm-push-#{$i} {
+				@include grid-push($i, $neat-config);
+			}
+		}
+	}
+
+	@include grid-media($md) {
+		@for $i from 1 through 12 {
+			& > .col-md-push-#{$i} {
+				@include grid-push($i, $neat-config);
+			}
+		}
+	}
+
+	@include grid-media($lg) {
+		@for $i from 1 through 12 {
+			.col-lg-push-#{$i} {
+				@include grid-push($i, $neat-config);
+			}
+		}
+	}
+
+	@include grid-media($xl) {
+		@for $i from 1 through 12 {
+			.col-xl-push-#{$i} {
+				@include grid-push($i, $neat-config);
+			}
+		}
+	}
+}

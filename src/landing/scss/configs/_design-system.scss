@@ -1,0 +1,99 @@
+// GRIDS 
+
+$xs: (media: "(max-width: 700px)"); //mobile portrait
+$sm: (media: "(min-width: 701px) and (max-width: 840px)"); //tablet portrait + mobile landscape
+$md: (media: "(min-width: 841px) and (max-width: 1260px)"); //tablet landscape + medium desktop
+$lg: (media: "(min-width: 1261px) and (max-width: 1600px)"); //large desktop
+$xl: (media: "(min-width: 1601px)"); //very large desktop
+$portrait: (media: "(orientation:portrait)");
+$landscape: (media: "(orientation:landscape)");
+
+// FONTS
+
+@font-face {
+    font-family: RobotoCondensed;
+    font-display: swap;
+    src: local('RobotoCondensed');
+    src:    url('../assets/fonts/RobotoCondensed/RobotoCondensed-Bold.ttf');
+    font-weight: bold;
+}
+@font-face {
+    font-family: RobotoCondensed;
+    font-display: swap;
+    src: local('RobotoCondensed');
+    src:    url('../assets/fonts/RobotoCondensed/RobotoCondensed-Regular.ttf');
+    font-weight: normal;  
+} 
+@font-face { 
+    font-family: RobotoCondensed;
+    font-display: swap;
+    src: local('RobotoCondensed');
+    src:    url('../assets/fonts/RobotoCondensed/RobotoCondensed-Light.ttf');
+    font-weight: 200;  
+} 
+
+
+@font-face {
+    font-family: UTMCopperplate;
+    font-display: swap;
+    src: local('UTMCopperplate');
+    src:    url('../assets/fonts/UTMCopperplate/UTM_Copperplate.ttf');
+    font-weight: normal;  
+} 
+
+@font-face {
+    font-family: UTMCopperplate;
+    font-display: swap;
+    src: local('UTMCopperplate');
+    src:    url('../assets/fonts/UTMCopperplate/UTM_CopperplateB.ttf');
+    font-weight: bold;  
+} 
+
+@font-face {
+    font-family: UTMGodWord;
+    font-display: swap;
+    src: local('UTMGodWord');
+    src:    url('../assets/fonts/UTMGodWord/UTM-God-s-WordR.ttf');
+    font-weight: normal;  
+} 
+
+@font-face {
+    font-family: UTMGodWord;
+    font-display: swap;
+    src: local('UTMGodWord');
+    src:    url('../assets/fonts/UTMGodWord/UTM-God-s-WordBold.ttf');
+    font-weight: bold;  
+} 
+
+// COLORS
+
+$text-primary: #EC7F00;
+$text-primary-reverse: #FFFFFF;
+$text-normal: #222222;
+$text-sub: #B3B3B3;
+
+$background-main: #EC5500;
+$background-normal: #050D34;
+$background-light: #F4F4F4;
+
+// ROWS
+
+$neat-grid: (
+  columns: 12,
+  gutter: 10px,
+);
+
+.row {
+	@include dndGrid($neat-grid);
+}
+
+// ANOTHER GRID
+
+$neat-grid-50: (
+	columns: 12,
+	gutter: 50px
+);
+
+.row-50 {
+	@include dndGrid($neat-grid-50);
+}

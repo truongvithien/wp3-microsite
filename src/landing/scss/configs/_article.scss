@@ -1,0 +1,699 @@
+
+
+.fancybox-slide {
+  @include grid-media($portrait, $xs) {
+      padding: 60px 10px;
+  }
+
+  &--iframe {
+    .fancybox-content {
+      background: transparent;  
+      .fancybox-iframe {
+        width: 1000px;
+        @include grid-media($portrait, $xs) {
+            width: 100%;
+        }
+      
+      }
+    }
+  }
+  &--video {
+    .fancybox-content {
+      
+    }
+  }
+}
+
+.top {
+  position: fixed;
+  top: 200px;
+}
+
+
+
+#MainContent {
+	margin: 0 auto;
+	width: 100%;
+  z-index: 100;
+  // padding: 10px;
+	// overflow: hidden;
+	position: relative;
+	z-index: 4;
+	// height: 1000px;
+}
+#static {
+	width: 100%;
+	position: absolute;
+	top: 0;
+	// background: url(../images/bg-content.png) center top no-repeat fixed transparent;
+  background-size: cover;
+
+  @include grid-media($xs, $portrait) {
+    // background: url(../images/bg-contentm.png) center top no-repeat fixed transparent;
+    background-size: cover;
+    background-position: fixed;
+  }
+}
+
+.StaticOuter {
+  // width: 700px;
+  max-width: 100%;
+	margin: 0 auto;
+	position: relative;
+  z-index: 50;
+
+  
+  
+  @include grid-media($xs, $portrait) {
+    width: 100%;
+  }
+}
+.StaticInner {
+	  width: 100%;
+    // padding: 0px 0 50px;
+    @include grid-media($xs, $portrait) {
+      // padding: 0px 0 50px;
+    }
+
+}
+.event-infor {
+  clear: both;
+  width: 700px;
+  margin: 0px auto;
+  padding: 10px;
+  @include grid-media($xs, $portrait) {
+    width: 100%;
+  }
+}
+.event-infor__title,
+.article__title {
+  
+  border-bottom: 2px solid #c83132;
+  color: #c83132;
+  font-size: 20px;
+  line-height: 36px;
+  font-weight: bold;
+  text-indent: 0;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  text-transform: capitalize;
+
+  @include grid-media($xs, $portrait) {
+    // width: calc(100% - 60px);
+  }
+}
+
+.event-infor__time,
+.article__time {
+  float: right;
+  margin-bottom: 5px;
+  padding: 10px;
+}
+
+article {
+  clear: both;
+  width: 100%;
+  height: 100%;
+  margin: 0px auto;
+  color: #494848;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding-bottom: 30px;
+  @include grid-media($xs, $portrait) {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  /* Form */
+}
+article a {
+	color: #2880e2;
+	text-decoration: underline ;
+}
+article a:hover {
+	color: #ff5a00;
+	text-decoration: underline;
+	
+}
+article iframe {
+  display: block;
+}
+article ul {
+  margin: 5px 0 8px 20px;
+  clear: both;
+}
+article ul > li {
+  margin-bottom: 8px;
+  padding-left: 15px;
+  list-style-type: none;
+  text-align: justify;
+}
+article ul > li ul {
+  margin: 5px 0 8px 20px;
+}
+article ul > li ul li {
+  margin-bottom: 8px;
+  padding-left: 15px;
+}
+article ul.icon li, article ul.Icon li {
+  // background: url(../images/content/icon.gif) 0 7px no-repeat;
+}
+article ul.disc li, article ul.Disc li {
+  // background: url(../images/content/icon_disc.gif) 0 8px no-repeat;
+}
+article ul.dash li, article ul.Dash li {
+  // background: url(../images/content/icon_dash.gif) 0 10px no-repeat;
+}
+article ul.decimal li, article ul.Decimal li {
+  list-style-type: decimal;
+  padding-left: 5px;
+}
+article ul.UpperAlpha li, article ul.upper-alpha li {
+  list-style-type: upper-alpha;
+}
+article ul.lower-alpha li, article ul.LowerCase li {
+  list-style-type: lower-alpha;
+}
+article ul.posts__tab {
+  background: none;
+  border-bottom: 1px solid #c83132;
+  width: 100%;
+  margin: 10px 0;
+  overflow: hidden;
+}
+article ul.posts__tab ~ .tab__detail {
+  display: none;
+}
+article ul.posts__tab li {
+  margin: 0;
+  padding: 0 2px 0 0;
+  float: left;
+  white-space: nowrap;
+}
+article ul.posts__tab li a {
+  background: #ebc9a1;
+  border: 1px solid #ebc9a1;
+  color: #111;
+  font: bold 15px/32px Tahoma;
+  font-weight: bold;
+  float: left;
+  display: block;
+  padding: 0 15px;
+  text-align: center;
+  text-decoration: none;
+}
+article ul.posts__tab li a:hover, article ul.posts__tab li a.active {
+  background: #c83132;
+  border: 1px solid #c83132;
+  color: #fff;
+}
+article ul.anchor-link, article ul.AnchorLink {
+  background: none;
+  border: 1px solid #990000;
+  margin: 10px 0;
+  padding: 10px 20px;
+  overflow: hidden;
+}
+article ul.anchor-link li, article ul.AnchorLink li {
+  // background: url(../images/content/anchorlink.gif) no-repeat 0 15px;
+  margin: 0px;
+  padding: 0px;
+  float: left;
+  width: 230.66667px;
+}
+article ul.anchor-link li a, article ul.AnchorLink li a {
+  color: #990000;
+  padding: 0 0 0 10px;
+  line-height: 30px;
+  font-weight: bold;
+  text-decoration: none;
+}
+article ul.anchor-link li a:hover, article ul.AnchorLink li a:hover {
+  color: #ff5a00;
+  text-decoration: underline;
+}
+article table {
+  margin: 10px auto;
+  border-collapse: collapse;
+}
+article table tr.OddRow, article table tr.odd {
+  background: #ebc9a1;
+}
+article table tr.EvenRow, article table tr.even {
+  background: #f2d8ba;
+}
+article table th {
+  background: #c83132;
+  border: 1px solid #9e866b;
+  color: #fff;
+  padding: 5px 10px;
+  text-align: center;
+  font-weight: bolder;
+}
+article table td {
+  border: 1px solid #9e866b;
+  padding: 3px 10px;
+}
+article table img {
+  margin: 0;
+  display: inline;
+}
+article table .right, article table .HorzRight, article table .horz-right {
+  text-align: right !important;
+}
+article table .center, article table .HorzCenter, article table .horz-center {
+  text-align: center !important;
+}
+article table .VeztTop, article table .vezt-top {
+  vertical-align: top !important;
+}
+article .notice-box, article .NoticeBox {
+  background: #fff;
+  border: 1px solid #9e866b;
+  margin: 25px 0 10px;
+  padding: 10px;
+}
+article .notice-box p.Legend,
+article .notice-box p.legend, article .NoticeBox p.Legend,
+article .NoticeBox p.legend {
+  background: #c83132;
+  border: 1px solid #c83132;
+  color: #fff;
+  float: left;
+  height: 25px;
+  line-height: 25px;
+  margin: -30px 0 10px;
+  padding: 0 20px;
+  position: absolute;
+  font-weight: bolder;
+}
+article p {
+  padding: 5px 0;
+  text-align: justify;
+}
+article p.center img, article p.TextCenter img {
+  display: block;
+  text-align: center;
+  margin: 0px auto;
+}
+article img {
+  margin: 0px;
+  padding: 0px;
+  max-width: 100%;
+  height: auto;
+}
+article img.ImgLeft, article img.left {
+  float: left;
+  margin: 5px 10px 5px 0;
+}
+article img.ImgRight, article img.right {
+  float: right;
+  margin: 5px 0 5px 10px;
+}
+article img.NoBorderImg, article img.no-boder {
+  border: none;
+  background: none;
+  padding: 0;
+}
+article img.BorderImg, article img.boder {
+  background-color: #eeeeee;
+  border: 1px solid #c2c3c9;
+  padding: 3px;
+}
+article img ~ br {
+  height: 0px;
+  display: none;
+}
+article img ~ .center,
+article img .TextCenter {
+  padding-top: 0px;
+  margin-top: -5px;
+  color: #424242;
+  font-style: italic;
+}
+article .FirstChar {
+  padding: 4px 4px 0 0;
+  line-height: 30px;
+  font-size: 40px;
+  float: left;
+}
+article .center, article .TextCenter {
+  text-align: center;
+  overflow: hidden;
+}
+article strong {
+  font-weight: bold;
+}
+article .strong {
+  font-weight: bold;
+  color: #c50700;
+}
+article .strong01, article .Strong01 {
+  font-weight: bold;
+  color: #c50700;
+  font-size: 15px;
+}
+article .strong02, article .Strong02 {
+  font-weight: bold;
+  color: #c50700;
+  font-size: 16px;
+}
+article h2, article h4 {
+  // background: url(../images/content/icon_h4.png) 0 3px no-repeat;
+  clear: both;
+  font: bold 22px/35px Arial;
+  color: #b87f3c;
+  text-indent: 0px;
+}
+article h2 ~ p, article h2 ~ ul, article h2 ~ table, article h2 ~ div, article h4 ~ p, article h4 ~ ul, article h4 ~ table, article h4 ~ div {
+  margin-left: 15px;
+}
+article h2 ~ table, article h4 ~ table {
+  max-width: 660px;
+}
+article h3, article h5 {
+  // background: url(../images/content/icon_h5.png) 0 2px no-repeat;
+  clear: both;
+  font: bold 18px/20px Arial;
+  color: #c83132;
+  margin-left: 40px;
+  text-indent: 0px;
+}
+article h3 ~ p, article h3 ~ ul, article h3 ~ table, article h3 ~ div, article h5 ~ p, article h5 ~ ul, article h5 ~ table, article h5 ~ div {
+  margin-left: 55px;
+}
+article h3 ~ table, article h5 ~ table {
+  max-width: 645px;
+}
+article form {
+  margin: 10px auto;
+  width: 600px;
+  @include grid-media($portrait, $xs) {
+    width: 100%;
+  }
+}
+article form fieldset legend {
+  display: none;
+}
+article form ul {
+  list-style: none;
+  margin: 0px;
+}
+article form ul > li {
+  width: 100%;
+  float: left;
+  overflow: hidden;
+  margin-bottom: 10px;
+  padding: 0px;
+}
+article form ul.Radio {
+  clear: none;
+  float: left;
+  list-style: none;
+  overflow: hidden;
+  width: 280px;
+  margin: 0px;
+}
+article form ul.Radio li {
+  float: left;
+  line-height: 28px;
+  margin: 0;
+  padding: 0;
+}
+article form ul.Radio li input {
+  float: none;
+  height: auto;
+  width: auto;
+}
+article form ul.RadioLine li {
+  clear: none;
+  float: left;
+  width: 100%;
+  overflow: hidden;
+}
+article form ul.RadioLine li p {
+  width: 40%;
+  float: left;
+  text-align: left;
+}
+article form ul.RadioLine li input {
+  width: auto;
+  float: left;
+  margin: 4px 33px 10px;
+  outline: none;
+}
+article form ul.RadioLine li span {
+  float: left;
+  overflow: hidden;
+  width: 20%;
+}
+article form ul.RadioLine li span.Space {
+  float: left;
+  width: 40%;
+  height: 1px;
+}
+article form ul.Checkbox {
+  clear: none;
+  float: left;
+  list-style: none;
+  overflow: hidden;
+  margin: 5px 0;
+  padding: 0;
+  width: 310px;
+}
+article form ul.Checkbox li {
+  float: left;
+  margin: 0 0 8px 0;
+  padding: 0;
+}
+article form ul.Checkbox li.AnotherIdea {
+  clear: both;
+  width: 100%;
+}
+article form ul.Checkbox li input {
+  float: none;
+  height: auto;
+  width: auto;
+}
+article form ul.Slider li .SliderHead {
+  float: right;
+}
+article form ul.Slider li .Less,
+article form ul.Slider li .Great,
+article form ul.Slider li .slider {
+  float: left;
+  width: 19%;
+}
+article form ul.Slider li input {
+  width: auto;
+  margin: 3px 0 0 0;
+  float: left;
+}
+article form textarea {
+  border: 1px solid #999999;
+  background: #ffffff;
+  color: #000;
+  width: 268px;
+  height: 80px;
+  margin-bottom: 10px;
+}
+article form select {
+  border: 1px solid #999999;
+  background: #ffffff;
+  color: #000;
+  text-align: center;
+  width: 272px;
+  height: 30px;
+  line-height: 30px;
+  margin-bottom: 5px;
+  padding: 0px 6px;
+}
+article form label {
+  clear: left;
+  float: left;
+  display: block;
+  text-align: right;
+  width: 150px;
+  height: 28px;
+  padding-right: 10px;
+  font: bold 0.5 tahoma;
+}
+article form input {
+  background: #ffffff;
+  border: 1px solid #999999;
+  color: #000;
+  width: 250px;
+  height: 28px;
+  line-height: 28px;
+  padding: 0px 10px;
+}
+article form input.Verify {
+  width: 110px;
+  margin: 0 0 0 10px;
+  clear: right;
+}
+article form input.BtnReg, article form input.BtnReset {
+  border: none !important;
+  width: auto !important;
+  height: auto !important;
+  margin: 15px 10px 0 160px;
+  padding: 0px !important;
+}
+article form input.BtnReset {
+  width: auto;
+  margin: 15px 10px 0 0;
+}
+article form .Require {
+  color: #c50700;
+}
+article form .Note {
+  // background: url(../images/content/Note.jpg) no-repeat 0 -4px #999;
+  width: 115px;
+  height: 20px;
+  padding-left: 5px;
+  text-align: left;
+  float: right;
+  color: #fff;
+  font-size: 11px;
+  line-height: 20px;
+}
+article form .ImgVerify {
+  float: left;
+  margin: 0 10px 0 0;
+}
+article form p {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+article form p.TextNote {
+  color: #c50700;
+  font-size: 11px;
+  font-family: Arial;
+  padding: 0 0 0 170px;
+}
+
+.user-info p {
+  background: #7a231d;
+  border-bottom: 2px solid #7a231d;
+  font: 15px/30px Tahoma;
+  color: #fff;
+  clear: both;
+  position: relative;
+  width: 100%;
+  margin: 0px auto;
+  margin-top: 10px;
+  height: 30px;
+  padding: 0px;
+  text-align: right;
+}
+.user-info p a {
+  color: #fff;
+  font-weight: bold;
+}
+.user-info p a:hover {
+  color: #ffe00e;
+}
+.user-info p #link-function {
+  // background: url(../images/content/function.png) no-repeat right center;
+  color: #fff;
+  padding: 0 25px;
+  float: right;
+  text-decoration: none;
+  cursor: pointer;
+}
+.user-info p #link-function:hover {
+  color: #ffe00e;
+}
+
+#list-function {
+  background: #7a231d;
+  border: 1px solid #7a231d;
+  overflow: hidden;
+  position: absolute;
+  z-index: 100;
+  width: 200px;
+  padding: 5px 0 8px;
+  display: none; 
+}
+#list-function.active {
+  display: block;
+}
+#list-function li {
+  margin-left: 10px;
+  text-align: left;
+  line-height: 20px;
+  padding: 0 5px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+#list-function li a {
+  text-decoration: none;
+  // background: url(../images/content/function-icon.gif) no-repeat 0 center;
+  padding-left: 10px;
+  color: #fff;
+}
+#list-function li a:hover {
+  color: #ffe00e;
+  text-decoration: underline;
+}
+#list-function li.Off a {
+  color: #6f6c6c;
+  cursor: default;
+  text-decoration: none;
+}
+
+
+/* Events List */
+.posts__list {
+  margin: 0px;
+  padding: 0px;
+}
+.posts__list li {
+  border-bottom: 1px dotted #958763;
+  margin: 0px;
+  padding: 15px 0 10px;
+  overflow: hidden;
+}
+.posts__list li:last-child {
+  border-bottom: none;
+}
+.posts__list li .posts__post-img {
+  clear: both;
+  float: left;
+  background-color: #eeeeee;
+  border: 1px solid #c2c3c9;
+  padding: 3px;
+  margin: 0 10px 0 0;
+  width: 140px;
+  height: 80px;
+}
+.posts__list li .posts__post-title {
+  font: bold 16px/25px Arial;
+  text-align: left;
+  text-decoration: none;
+  margin: 0px;
+  padding: 0px;
+}
+.posts__list li .posts__post-date {
+  color: #858585;
+  font-size: 13px;
+  float: right;
+  margin: 0px;
+  padding: 0px;
+}
+.posts__list li .posts__post-intro {
+  margin: 0px;
+  padding: 0px;
+  color: #494848;
+}
+
+.sign,
+.author,
+.Author {
+  border-top: 1px dotted #000;
+  margin: 0 0 20px;
+  padding-top: 5px;
+  text-align: right;
+}

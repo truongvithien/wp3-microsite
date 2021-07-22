@@ -1,0 +1,41 @@
+<div id="exchange1" class="exchange exchange1">
+
+    <div class="exchange1__wrapper">
+        {% for item in 1..7 %}
+            <div class="exchange1__item exchange1__item--{{item}} 
+                    {% if item == 1 %}received{% endif %}
+                    {% if item == 2 %}active{% endif %}
+                    {% if item == 3 %}active{% endif %}
+                    {% if item > 3 %}off{% endif %} ">
+                <div class="exchange1__date">
+                    Nạp {{item}} ngày
+                </div>
+                <div class="exchange1__thumbnail">
+                    <img src="assets/images/task-topup7/{{item}}.png" alt="">
+                </div>
+                <a href="#" class="exchange1__action exchange_action">cta_receive</a>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="exchange1b__wrapper">
+        {% for item in [3, 7] %}
+            <div class="exchange1b__item exchange1b__item--{{item}} 
+                    {% if item == 3 %}received{% endif %}
+                    {% if item == 7 %}off{% endif %}">
+                <div class="exchange1b__date">
+                    Nạp đủ {{item}} ngày
+                </div>
+                <div class="exchange1b__thumbnail">
+                    <img src="assets/images/task-topup7/combo-{{item}}.png" alt="">
+                </div>
+                <a href="#" class="exchange1b__action exchange_action">cta_receive</a>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="tooltip">
+        <span class="tooltip__toggle">question_mark</span>
+        <div class="tooltip__content">
+            <p>Yêu cầu nạp 7 ngày trong vòng 21 ngày để nhận phần thưởng</p>
+        </div>
+    </div>
+</div>

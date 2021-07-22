@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promotion - Web Platform 3.0</title>
+</head>
+<body>
+
+    {# Main Components #}
+    
+    <div id="wrapper" class="wrapper wrapper--landing">
+        <section id="frame1" class="section section--frame1 frame1 scrollFrame">
+            <div class="section__background">
+                <img src="assets/images/bg/bg-1.jpg" class="desktop lazyload" alt="">
+                <img src="assets/images/bg/mb-bg-1.jpg" class="mobile lazyload" alt="">
+            </div>
+            <div class="section__content">
+                <div class="container">
+                    <div class="frame1__inner">
+                        <a href="#" class="logo">
+                            <h1>Forsaken World</h1>
+                        </a>
+                        <a href="#" class="join">Tham Gia</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="frame2" class="section section--frame2 frame2 scrollFrame">
+            <div class="section__background">
+                <img src="assets/images/bg/bg-2.jpg" class="desktop lazyload" alt="">
+                <img src="assets/images/bg/mb-bg-2.jpg" class="mobile lazyload" alt="">
+            </div>
+            <div class="section__content">
+                <div class="container">
+                    <div class="frame2__inner">
+                        <a href="#" class="join">Tham Gia</a>
+                        {% include "./component/exchange-1.html.twig" %}
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="frame3" class="section section--frame3 frame3 scrollFrame">
+            <div class="section__background">
+                <img src="assets/images/bg/bg-3.jpg" class="desktop lazyload" alt="">
+                <img src="assets/images/bg/mb-bg-3.jpg" class="mobile lazyload" alt="">
+            </div>
+            <div class="section__content">
+                <div class="container">
+                    <div class="frame3__inner">
+                        <a href="#" class="join">Tham Gia</a>
+                        {% include "./component/exchange-2.html.twig" %}
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="frame4" class="section section--frame4 frame4 scrollFrame">
+            <div class="section__background">
+                <img src="assets/images/bg/bg-4.jpg" class="desktop lazyload" alt="">
+                <img src="assets/images/bg/mb-bg-4.jpg" class="mobile lazyload" alt="">
+            </div>
+            <div class="section__content">
+                <div class="container">
+                    <div class="frame4__inner">
+                        <a href="#" class="join">Tham Gia</a>
+                        {% include "./component/exchange-3.html.twig" %}
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="frame5" class="section section--frame5 frame5 scrollFrame">
+            <div class="section__background">
+                <img src="assets/images/bg/bg-5.jpg" class="desktop lazyload" alt="">
+                <img src="assets/images/bg/mb-bg-5.jpg" class="mobile lazyload" alt="">
+            </div>
+            <div class="section__content">
+                <div class="container">
+                    <div class="frame5__inner">
+                        {% include "./component/exchange-4.html.twig" %}
+                    
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="footer" class="section section--footer footer scrollFrame">
+            <div class="section__background">
+            </div>
+            <div class="section__content">
+                <div class="container">
+                    <div class="footer__inner">
+                        {% include "./component/footer.html.twig" %}
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    {# Floating Components #}
+
+    {# {% include "./component/notification.html.twig" %} #}
+    {% include "./component/navigation.html.twig" %}
+
+    {# Lightbox Components #}
+
+    {% include "./component/module.html.twig" %}
+    {% include "./component/popup.html.twig" %}
+
+    {# Add - on scripts #}
+
+    {% include "./component/livereload.html.twig" %}
+
+    {# // <script src="//tuyetung.zing.vn/tools/time.php"></script>   #}
+
+    <script>
+        // Init Promotion 
+        let domainKM = ''; 
+        // var serverTime = new Date(2021,3, 4).getTime() / 1000;
+
+    </script>
+
+</body>
+</html>
+

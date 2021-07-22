@@ -1,0 +1,36 @@
+<div id="exchange4" class="exchange exchange4">
+
+    <div class="exchange4__status"> 
+        Bạn đã nạp tích lũy: <span class="value">99.000.000</span> 
+    </div>
+
+    <div class="exchange4__wrapper">
+        {% set val = [
+            '169.000', '329.000', '649.000', '1.299.000', '2.149.000',
+            '4.499.000', '6.890.000', '11.900.000', '23.900.000', '23.900.000',
+            '49.900.000'
+        ] %}
+        {% for item in 1..11 %}
+            <div class="exchange4__item exchange4__item--{{item}} 
+                    {% if item == 1 %}received{% endif %}
+                    {% if item == 2 %}active{% endif %}
+                    {% if item == 3 %}active{% endif %}
+                    {% if item > 3 %}off{% endif %} ">
+                <div class="exchange4__date">
+                    Mốc nạp <br /> <strong>{{val[loop.index0]}}</strong>
+                </div>
+                <div class="exchange4__thumbnail">
+                    <img src="assets/images/task-topupm/{{item}}.png" alt="">
+                </div>
+                <a href="#" class="exchange4__action exchange_action">cta_receive</a>
+            </div>
+        {% endfor %}
+    </div>
+    
+    <div class="tooltip">
+        <span class="tooltip__toggle">question_mark</span>
+        <div class="tooltip__content">
+            <p>Đăng nhập liên tục, đủ ngày nhận vật phẩm tương ứng.. </p>
+        </div>
+    </div>
+</div>

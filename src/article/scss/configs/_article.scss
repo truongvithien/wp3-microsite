@@ -1,0 +1,245 @@
+.article {
+  font-size: 16px;
+  color: #dedede;
+  padding: 0 20px;
+
+  @include grid-media($xs, $portrait) {
+      font-size: 12px;
+  }
+
+  &__title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: 200px;
+  }
+
+  &__title, h1 {
+      font-size: 1.8em;   
+      font-weight: bold;
+      line-height: 1.4;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #eee; 
+      color: #d04f30;    
+      text-align: center;
+      font-family: Arsenal;
+
+  }
+
+  &__meta {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 16px 0;
+  }
+
+  &__cate {
+      display: block;
+      padding: 12px;
+      margin-right: 12px;
+      color: #111;
+      background: #ddd;
+      border-radius: 4px;
+      font-size: .8em;
+  }
+
+  &__time {
+      color: #888;
+      font-size: .8em;
+  }
+}
+
+
+.article {
+  &__content {
+      font-size: 1em;
+      color: #bbc0c7;
+      line-height: 1.4;
+      *:not(:only-child):not(li) {
+          margin-bottom: 12px;
+      }
+
+      // UL
+
+      ul {
+          margin-left: 20px;
+          li {
+              list-style-position: outside;
+              margin-bottom: 6px;
+
+              // ul {
+              //     margin-left: 20px;
+              // }
+
+          }
+
+          &, &.bulleted {
+              li {
+                  list-style-type: disc;
+              }
+          }
+
+          &.numbered {
+              li {
+                  list-style-type: decimal;
+              }
+          }
+      }
+
+      // TITLE
+
+      h2 {
+          font-size: 1.4em;   
+          font-weight: bold;
+          line-height: 1.4;
+          color: #dfcb9a;
+      }
+
+      h3 {
+          font-size: 1.3em;   
+          font-weight: bold;
+          line-height: 1.4;
+          color: #fff6dd;
+      }
+
+      h4 {
+          font-size: 1.2em;   
+          font-weight: bold;
+          line-height: 1.4;
+          color: #dfcb9a;
+      }
+
+      h5 {
+          font-size: 1.1em;   
+          font-weight: bold;
+          line-height: 1.4;
+          color: #fff6dd;
+      }
+
+      h6 {
+          font-size: 1em;   
+          font-weight: bold;
+          line-height: 1.4;
+          color: #dfcb9a;
+      }
+
+      p {
+
+      }
+
+      a {
+          color: #dfcb9a;
+          text-decoration: none;
+          border-bottom: 1px solid transparent;
+          transition: border-bottom .4s;
+
+          &:hover {
+              border-bottom: 1px solid #dfcb9a;
+          }
+      }
+
+      a.hero {
+          display: block;
+          background: rgba(#dfcb9a, .05);
+          color: #dfcb9a;
+          font-weight: bold;
+          padding: 20px;
+          border: 0px;
+      }
+
+
+      // IMG + IFRAME
+
+      img, iframe {
+          display: block;
+          max-width: calc(100% );
+          margin: 0 auto 12px;
+      }
+
+      img + p.caption, iframe + p.caption {
+          display: block;
+          max-width: calc(100% - 20px * 2);
+          margin: 0 auto 12px;
+          font-style: italic;
+          font-size: .8em;
+          color: #aaa;
+          text-align: center;
+      }
+
+      img.float {
+          &, &--left {
+              float: left;
+              margin-right: 20px;
+          }
+          &--right {
+              float: right;
+              margin-right: 0px;
+              margin-left: 20px;
+          }
+      }
+
+      // CALLOUT
+
+      .callout {
+          padding: 20px 20px;
+          background: #2d4aa3;
+          color: #dfcb9a;
+
+      }
+
+      // TABLE
+
+      .table {
+          width: 100%;
+
+          @include grid-media($xs, $portrait) {
+
+              overflow: auto;
+          }
+      }
+
+      table {
+          width: 100%;
+          td {
+              padding: 8px;
+              border: 1px solid #ccc;
+              vertical-align: middle;
+              img {
+                  max-width: 100%;
+                  margin: 0 auto 0;
+              }
+          }
+          thead {
+              background: #2d4aa3;
+              color: #dfcb9a;
+              font-weight: bold;
+              tr {
+                  th {
+                      padding: 12px;
+                      text-align: center;
+                      vertical-align: middle;
+                  }
+              }
+          }
+          tbody {
+              tr {
+                  td {
+                      background: rgba(#2d4aa3, .5);
+                      
+                  }
+              }
+          }
+          tfoot {
+              background: #2d4aa3;
+              color: #dfcb9a;
+              tr {
+                  td {
+                      
+                  }
+              }
+          }
+      }
+
+  }
+}

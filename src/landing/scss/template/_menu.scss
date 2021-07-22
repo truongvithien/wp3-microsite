@@ -1,0 +1,39 @@
+.menu {
+    position: absolute;
+    top: 680px;
+    left: calc(50% - 4px);
+    width: 600px;
+    height: 280px;
+
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        li {
+            a {
+                display: block;
+                font-size: 0px;
+                margin: 4px 4px;
+            }
+        }
+    }
+
+    &__getturn {
+        @include sprite($btn-getturn);   
+        &:hover {
+            @include sprite($btn-getturn-hov);  
+        }
+    }
+    &__rule {
+        @include sprite($btn-rule); 
+        &:hover {
+            @include sprite($btn-rule-hov);  
+        }  
+    }
+    &__reward {
+        @include sprite($btn-reward);   
+        &:hover {
+            @include sprite($btn-reward-hov);  
+        }
+    }
+}

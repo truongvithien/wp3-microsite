@@ -1,0 +1,577 @@
+.milestones {
+    // background: rgba(#FFF, .8);
+    position: absolute;
+    width: 680px;
+    height: 280px;
+
+    top: 430px;
+    left: calc(50% - 680px / 2);
+    padding: 0 14px;
+
+    @include grid-media($xs, $portrait) {
+        top: 700px;
+    }
+
+}
+
+.milestones_stats {
+    display: none;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // margin: 0 auto 100px;
+    position: absolute;
+    top: 145px;
+    width: 420px;
+    left: calc(50% - 420px / 2 - 295px);
+    z-index: 10;
+    // @include sprite($milestone_value);
+    font-family: RobotoCondensed;
+    @include grid-media($xs, $portrait) {
+        // margin: 0 auto 448px;
+        top: 245px;
+        left: calc(50% - 420px / 2);
+    }
+
+    &__value {
+        display: inline-block;
+        // position: absolute;
+        // top: 296px;
+        // left: calc(50% - 300px / 2);
+        // width: 300px;
+
+        margin: 0 10px;
+        font-size: 24px;
+        line-height: 1.2; 
+
+        opacity: 1;
+
+        text-align: center;
+        border: 0px;
+        // background: transparent;
+        // background: -webkit-linear-gradient(#ce3333, #ce3333);
+        // background-clip: text;
+        // -webkit-background-clip: text;
+        // -webkit-text-fill-color: transparent;
+        color: #966924;
+
+
+        // @include grid-media($xs, $sm, $portrait) {
+        //     top: 290px;
+        //     left: calc(50% - 300px / 2 + 10px);
+        // }
+
+    }
+
+    &__label {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        // position: absolute;
+        // top: 376px;
+        // left: calc(50% - 320px / 2);
+        width: 100%;
+        text-align: center;
+
+        // text-transform: uppercase;
+        font-size: 24px;
+        line-height: 1.2; 
+        color: #966924;
+
+        @include grid-media($xs, $sm, $portrait) {
+            top: 370px;
+            left: calc(50% - 320px / 2 + 10px);
+        }
+    }
+}
+
+// .milestones_bar {
+//     display: block;
+//     position: absolute;
+
+//     width: 880px; 
+//     top: 60px;
+//     left: calc(50% - 880px / 2);
+//     height: 20px;
+//     margin: 0 auto 340px;
+
+//     $scalePercent: .8;
+
+//     @include grid-media($xs, $sm, $portrait) {
+//         width: calc(880px * #{$scalePercent});
+//         height: calc(20px * #{$scalePercent});
+//         left: calc(50% - 880px * #{$scalePercent} / 2);
+//         margin: 0 auto 420px;
+//     }
+
+//     background-size: cover;
+//     background-repeat: no-repeat;
+//     background-image: url(../assets/images/milestone-bar.png);
+//     background-position: left top;
+
+//     // @include grid-media($xs, $portrait) {
+//     //     background-image: url(../assets/images/mb-milestone_bar.png);
+//     // }
+
+//     &__active {
+//         background-size: cover;
+//         // width: 946px; 
+//         height: 20px;
+
+//         @include grid-media($xs, $sm, $portrait) {
+//             height: calc(18px * #{$scalePercent});
+//         }
+//         background-position: left top;
+//         background-image: url(../assets/images/milestone-bar-act.png);
+//         // @include grid-media($xs, $portrait) {
+//         //     background-image: url(../assets/images/mb-milestone_bar-active.png);
+//         // }
+//     }
+
+//     // &__run {
+//     //     @include sprite($milestone-hero);
+//     //     position: absolute;
+//     //     z-index: 10;
+//     //     top: -30px;
+//     //     transform: translateX(-40px);
+
+//     // }
+// }
+
+.milestones_icon {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+    width: 880px; 
+    position: absolute;
+    top: 240px;
+    left: calc(50% - 880px / 2 + 8px);
+    // height: 100%;
+
+    @include grid-media($xs, $portrait) {
+        top: 280px;
+        width: 880px;
+        left: calc(50% - 880px / 2);
+        transform: scale(.8);
+    }
+
+    &__item {
+        
+        $gifts: $milestone-1, $milestone-2, $milestone-3;
+
+        @for $i from 1 through 3 { 
+            &:nth-child(#{$i}) {
+                // .milestones_icon__get {
+                    @include sprite(nth($gifts, $i));
+                // }
+            }
+        }
+
+        position: relative;
+        display: flex; 
+        flex-wrap: wrap;
+        align-content: space-between;
+        
+
+        &:nth-child(1), &:nth-child(3) {
+            margin-top: -100px;
+        }
+
+
+    }
+
+    &__value {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        position: absolute;
+        bottom: 45px;
+        left: calc(50%);
+        transform: translateX(calc(-50%));
+        color: #966924;
+        font-family: RobotoCondensed;
+        font-size: 24px;
+        
+        // @include sprite($milestone-code);
+
+        iframe {
+            width: 200px;
+            height: 50px;
+        }
+    }
+
+    &__get {
+        display: block;
+        // margin: 0 auto;
+        font-size: 0px;
+        pointer-events: none;
+        opacity: .7;
+
+        &:not(.off):hover, &:not(.gotit):hover {
+            filter: brightness(110%);
+        }
+
+        &.off, &.gotit {
+            filter: grayscale(100%);
+        }
+    }
+
+    &__item.active {
+        .milestones_icon__value {
+            font-weight: bold;
+        }
+        .milestones_icon__get {
+            pointer-events: all;
+            opacity: 1;
+        }
+    }
+}
+
+// .milestones_icon {
+//     display: flex;
+//     justify-content: space-around;
+//     width: 1365px; 
+//     position: absolute;
+//     left: calc(50% - 1365px / 2);
+//     top: 341px;
+
+//     @include grid-media($xs, $portrait) {
+//         width: 100%;
+//         flex-wrap: wrap;
+//         justify-content: center;
+//         left: 0;
+//         top: 400px;
+//     }
+
+//     &__item {
+//         width: 210px;
+//         height: 405px;
+
+//         @include grid-media($xs, $portrait) {
+//             display: flex;
+//             flex-wrap: wrap;
+//             margin: 0 20px;
+//         }
+
+//         .point {
+//             display: block;
+//             position: relative;
+//             width: 100%;
+//             height: 125px;
+
+//             @include grid-media($xs, $portrait) {
+//                 order: 2;
+//             }
+
+//             &:before {
+//                 content: "";
+//                 display: block;
+//                 position: absolute;
+//                 @include sprite($milestone_point);
+//                 left: calc(50% - 30px / 2);
+//                 bottom: 0px;
+//             }
+
+//             &:after {
+//                 content: "";
+//                 display: block;
+//                 position: absolute;
+//                 left: calc(50% - 97px / 2);
+//                 top: 30px;
+//             }
+//         }
+
+//         .reward {
+//             display: flex;
+//             justify-content: center;
+//             align-items: flex-start;
+//             position: relative;
+//             margin: 20px auto ;
+//             @include sprite($milestone-bg);
+
+//             padding: 40px 30px;
+//             display: flex;
+//             justify-content: center;
+//             align-items: flex-start;
+//             align-content: flex-start;
+//             flex-wrap: wrap;
+
+//             &:before {
+//                 content: "";
+//                 display: block;
+//                 position: absolute;
+//                 top: 40px;
+//                 left: calc(50% - 141px / 2);
+//             }
+
+//             &__item {
+//                 display: block;
+//                 position: relative;
+//                 z-index: 3;
+//                 width: 63px;
+//                 height: 63px;
+//                 margin: 0 auto 10px;
+//                 // background: rgba(#FFF, .2);
+//                 z-index: 10;
+//                 .tooltip {
+//                     opacity: 0;
+//                     width: max-content;
+//                     max-width: 280px;
+//                     left: calc(50%);
+//                     transform: translateX(-50%);
+//                     height: auto;
+//                     background: #cec5a0;
+//                     color: #000;
+//                     position: absolute;
+//                     bottom: calc(100% + 20px);
+//                     padding: 6px;
+//                     font-size: 18px;
+//                     line-height: 20px;
+//                     border-radius: 4px;
+//                     pointer-events: none;;
+                    
+
+
+//                     &:before {
+//                         content: "";
+//                         display: block;
+//                         position: absolute;
+//                         top: 100%;
+//                         left: calc(50% - 10px);
+//                         width: 0px;
+//                         border-width: 6px;
+//                         border-color: #cec5a0 transparent transparent transparent;
+//                         border-style: solid;
+//                     }
+                    
+
+//                 }
+
+//                 &:hover > .tooltip {
+//                     opacity: .8;
+//                 }
+//             }
+//         }
+
+
+//         &.active {
+//             .point {
+//                 &:before {
+//                     left: calc(50% - 52px / 2);
+//                     bottom: -12px;
+//                     @include sprite($milestone_point-hov);
+
+//                 }
+    
+//             }
+//             .reward {
+//                 @include sprite($milestone-bg-act);
+
+//                 &__item {
+                    
+//                 }
+//             }
+//         }
+
+//         &--1 {
+//             .point {
+//                 &:after {
+//                     @include sprite($milestone-1);
+//                 }
+//             }
+//             .reward {
+//                 &:before {
+//                     content: "";
+//                     display: block;
+//                     @include sprite($rewards-1);
+//                 }
+//             }
+//             &.active {
+//                 .point {
+//                     &:after {
+
+//                         @include sprite($milestone-1-act);
+//                     }
+//                 }
+//             }
+//         }
+
+//         &--2 {
+//             .point {
+//                 &:after {
+//                     @include sprite($milestone-2);
+
+//                     @include grid-media($xs, $portrait) {
+//                         @include sprite($mb-milestone-2);
+//                     }
+//                 }
+//             }
+//             .reward {
+//                 &:before {
+//                     content: "";
+//                     display: block;
+//                     @include sprite($rewards-2);
+//                 }
+//             }
+//             &.active {
+//                 .point {
+//                     &:after {
+
+//                         @include sprite($milestone-2-act); 
+
+//                         @include grid-media($xs, $portrait) {
+//                             @include sprite($mb-milestone-2-act);
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+
+//         &--3 {
+//             .point {
+//                 &:after {
+//                     @include sprite($milestone-3);
+//                 }
+//             }
+//             .reward {
+//                 &:before {
+//                     content: "";
+//                     display: block;
+//                     @include sprite($rewards-3);
+//                 }
+//             }
+//             &.active {
+//                 .point {
+//                     &:after {
+
+//                         @include sprite($milestone-3-act);
+//                     }
+//                 }
+//             }
+//         }
+
+//         &--4 {
+//             .point {
+//                 &:after {
+//                     @include sprite($milestone-4);
+
+//                     @include grid-media($xs, $portrait) {
+//                         @include sprite($mb-milestone-4);
+//                     }
+//                 }
+//             }
+//             .reward {
+//                 &:before {
+//                     content: "";
+//                     display: block;
+//                     @include sprite($rewards-4);
+//                 }
+//             }
+//             &.active {
+//                 .point {
+//                     &:after {
+//                         @include sprite($milestone-4-act);
+
+//                         @include grid-media($xs, $portrait) {
+//                             @include sprite($mb-milestone-4-act);
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+
+//         &--5 {
+//             .point {
+//                 &:after {
+//                     @include sprite($milestone-5);
+//                 }
+//             }
+//             .reward {
+//                 &:before {
+//                     content: "";
+//                     display: block;
+//                     @include sprite($rewards-5);
+//                 }
+//             }
+//             &.active {
+//                 .point {
+//                     &:after {
+
+//                         @include sprite($milestone-5-act);
+//                     }
+//                 }
+//             }
+//         }
+
+
+//         @include grid-media($xs, $portrait) {
+//             &--2, &--4 {
+//                 order: 10;
+//                 .point {
+//                     &:before {
+//                         content: "";
+//                         display: block;
+//                         position: absolute;
+//                         @include sprite($milestone_point);
+//                         left: calc(50% - 30px / 2);
+//                         top: 40px;
+//                         bottom: auto;
+//                     }
+
+//                     &:after {
+//                         content: "";
+//                         display: block;
+//                         position: absolute;
+//                         left: calc(50% - 97px / 2);
+//                         top: auto;
+//                         bottom: 0px;
+//                     }
+//                 }
+//                 .reward {
+//                     @include grid-media($xs, $portrait) {
+//                         order: 3;
+//                     }
+//                 }
+//                 &.active {
+//                     .point {
+//                         &:before {
+//                             bottom: 44px;
+//                             top: auto;
+//                         }
+//                     }
+//                 }
+//             }
+
+ 
+//         }
+
+//     }
+// }
+
+.preorder_text {
+    display: block;
+    text-align: center;
+    color: #eedfac;
+    font-size: 19px;
+}
+
+.preorder_award {
+    // display: block;
+    margin: 0 auto;
+}
+
+.codecode {
+    width: 200px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    color: #530d0d;
+    font-family: RobotoCondensed;
+    font-size: 18px;
+    
+}

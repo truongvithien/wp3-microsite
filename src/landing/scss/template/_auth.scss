@@ -1,0 +1,70 @@
+.auth {
+    display: flex;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+
+    &__profile {
+        font-family: UTMCopperplate; 
+        color: #fff;
+
+        font-size: 18px;
+        font-weight: 200;
+        line-height: 1.4;
+        text-transform: none;
+
+        // text-align: center;
+
+        // position: absolute;
+        // top: 10px;
+        // left: 0;
+        width: 100%;
+
+        @include grid-media($xs, $portrait) {
+            font-size: 22px;
+        }
+
+        .username {
+            font-family: UTMCopperplate; 
+            position: relative;
+            font-weight: bold; 
+            font-size: 18px;
+
+            @include grid-media($xs, $portrait) {
+                font-size: 22px;
+            }
+        }
+
+    }
+    &__info {
+        font-family: UTMCopperplate, sans-serif; 
+        color: #fef3ab;
+
+        font-size: 22px;
+        font-weight: 200;
+        line-height: 26px;
+
+        text-align: center;
+
+        position: absolute;
+        top: 130px;
+        left: 0;
+        width: 100%;
+
+        display: none;
+
+        .point {
+            display: block;
+            margin: 10px auto;
+            text-align: center;
+            font-weight: bold;
+            font-size: 60px;
+            line-height: 60px;
+            background: rgb(252,201,91);
+            background: linear-gradient(180deg, rgba(252,201,91,1) 0%, rgba(249,172,52,1) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+              
+        }
+    }
+}

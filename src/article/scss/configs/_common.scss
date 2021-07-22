@@ -1,0 +1,262 @@
+
+// COMMON 
+
+* {
+    // font-family: 'Roboto', sans-serif !important;
+    box-sizing: border-box;
+    appearance: none;
+	-webkit-appearance: none;
+    -moz-appearance: none; 
+    text-decoration: none;
+
+	&:focus {
+		outline: none;
+	}
+}
+
+.off {
+	filter: grayscale(100%);
+	pointer-events: none; 
+}
+
+html {
+    // overflow: hidden;
+    overflow-x: hidden;
+
+    $bgColor: #2d4aa3;
+    $thumbColor: #2d4aa3;
+    &::-webkit-scrollbar {width: 6px; transition: width .2s;  border-radius: 12px;}
+    &:hover {&::-webkit-scrollbar { width: 6px; border-radius: 12px;}}
+    &::-webkit-scrollbar-track {background: rgba($bgColor, .3); border-radius: 12px;}
+    &::-webkit-scrollbar-thumb {background: rgba($thumbColor, 1); border-radius: 12px;}
+    &::-webkit-scrollbar-thumb:hover {background: rgba($thumbColor, 1); }
+
+    &.popup-opened {
+        & {
+            height: 100vh;
+            overflow: hidden; 
+        }
+    }
+}
+
+body {
+    width: 100%;
+    // height: 100vh;
+    overflow-x: hidden;
+	overflow-y: hidden; 
+    margin: 0;
+    padding: 0;
+    background: none;
+    // overflow: hidden;
+    // overflow-x: hidden;
+
+    &.popup-opened {
+        overflow: hidden;
+    }
+}
+
+.outer {
+    width: 100%;
+	top: 0;
+	z-index: 10;
+    &--static {
+        position: static;
+
+        @include grid-media($xs, $sm) {
+            position: absolute;
+            z-index: 12;
+
+            &.active {
+                z-index: 13;
+            }
+        }
+    }
+
+    &--fixed {
+        top: 420px;
+        position: absolute;
+        z-index: 12;
+
+        @include grid-media($xs, $sm) {
+            height: 0;
+        }
+	}
+	
+    &--popup {
+        top: 0px;
+        position: absolute;
+        z-index: 20;
+    }
+
+    &--totop {
+        top: auto;
+        position: fixed;
+        bottom: 200px;
+
+        @include grid-media($xs, $sm) {
+            bottom: 240px;
+        }
+    }
+}
+
+.wrapper {
+    // width: 100vw;
+    // height: calc(100vh - 70px);
+    width: 2000px;
+    transform-origin: top left; 
+	overflow: hidden;
+    // @include grid-media($portrait, $xs) {
+    //     width: 768px;
+    // }
+	&.popup-opened {
+		height: calc(100vh - 70px);
+    }
+}
+
+// CONTAINER
+
+.container {
+	display: block;
+    margin: 0 auto;
+    width: 1160px;
+    max-width: calc(100% - 16px * 2);
+}
+
+// SPLITTING 
+
+hr.split {
+	margin: 0;
+    border: 0;
+    background: transparent; 
+
+    &--low {
+        height: 16px;
+    }
+    &--medium {
+        height: 24px;
+    }
+    &--high {
+        height: 32px;
+    }
+    &--giant {
+        height: 48px;
+    }
+}
+
+// CLEAR
+
+.clearfix {
+    &:after { 
+        content: "";
+        clear: both;
+        display: table;
+    }
+}
+
+.tag {
+    display: inline-block;
+    background: rgba(#EAEAEA, 1);
+    color: $text-normal;
+    border-radius: 4px;
+    padding: 4px 8px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.placeholder {
+    @include grid-media($xs, $sm) {
+        display: block;
+        height: 50px;
+    }
+}
+
+.time {
+    display: inline-block;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    color: $text-sub;
+}
+
+
+.live {
+    width: 34px;
+    height: 16px;
+    background: $background-main;
+    z-index: 3;
+    color: $text-primary-reverse;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 10px;
+    line-height: 14px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.limited {
+    .limited--2 {
+        
+    }
+}
+
+.section {
+    position: relative;
+    display: block;
+    width: 100%;
+
+    &__background {
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    &__parallax {
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+    }
+    &__content {
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+    }
+}
+
+.desktop {
+    display: block;
+}
+.mobile {
+    display: none;
+}
+@include grid-media($xs, $sm) {
+    .desktop {
+        display: none;
+    }
+    .mobile {
+        display: block;
+    }
+}
+
+.button-img {
+    .label {
+        display: none;
+    }
+
+}
+
